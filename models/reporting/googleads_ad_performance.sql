@@ -17,6 +17,12 @@ spend,
 impressions,
 clicks,
 conversions as purchases,
-conversions_value as revenue
+conversions_value as revenue,
+googleadsgiftpurchaseconversion as gift_purchases,
+googleadsgiftpurchaseconversion_value as gift_purchases_revenue,
+googleadssubscriptionpurchaseconversion as subscription_purchases,
+googleadssubscriptionpurchaseconversion_value as subscription_purchases_revenue,
+googleadsalcpurchaseconversion as alc_purchases,
+googleadsalcpurchaseconversion_value as alc_purchases_revenue
 
 FROM {{ ref('googleads_performance_by_ad') }}
