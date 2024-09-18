@@ -10,3 +10,6 @@ sources:
 
     - name: googleads_campaign_performance
       identifier: tradecoffee_googleads_campaign_performance
+    
+    - name: bingads_campaign_performance
+      identifier: tradecoffee_bingads_campaign_performance
