@@ -8,10 +8,11 @@ ad_id,
 campaign_name,
 campaign_id,
 campaign_status,
-CASE WHEN campaign_name ~* 'Search' AND campaign_name ~* 'Brand' THEN 'Campaign Type: Search Brand'
-    WHEN campaign_name ~* 'Search' AND campaign_name ~* 'NB' THEN 'Campaign Type: Search Non-Brand'
-    ELSE 'Campaign Type: Shopping'
-END AS campaign_type_default,
+campaign_type_default,
+CASE WHEN campaign_name ~* 'Search' AND campaign_name ~* 'Brand' THEN 'Brand Search'
+    WHEN campaign_name ~* 'Search' AND campaign_name ~* 'NB' THEN 'Non-Brand Search'
+    ELSE 'Shopping'
+END AS tactic,
 ad_group_name,
 ad_group_id,
 date,
