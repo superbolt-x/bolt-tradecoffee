@@ -7,7 +7,10 @@ account_id,
 campaign_name,
 campaign_id,
 campaign_status,
-campaign_type_default,
+CASE WHEN campaign_name ~* 'Search' AND campaign_name ~* 'Brand' THEN 'Campaign Type: Search Brand'
+    WHEN campaign_name ~* 'Search' AND campaign_name ~* 'NB' THEN 'Campaign Type: Search Non-Brand'
+    ELSE 'Campaign Type: Shopping'
+END AS campaign_type_default,
 date,
 date_granularity,
 spend,
