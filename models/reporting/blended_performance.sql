@@ -13,10 +13,10 @@ WITH paid_data as
         SELECT 'Google Ads' as channel, date, date_granularity,
             spend, clicks, impressions, purchases, revenue
         FROM {{ source('reporting','googleads_campaign_performance') }}
-        /*UNION ALL
+        UNION ALL
         SELECT 'Bing' as channel, date, date_granularity,
             spend, clicks, impressions, purchases, revenue
-        FROM {{ source('reporting','bingads_campaign_performance') }}*/
+        FROM {{ source('reporting','bingads_campaign_performance') }}
         )
     GROUP BY channel, date, date_granularity)
     
