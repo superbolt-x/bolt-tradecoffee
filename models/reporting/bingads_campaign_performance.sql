@@ -10,8 +10,8 @@ campaign_status,
 campaign_type_default,
 CASE WHEN campaign_name ~* 'Search' AND campaign_name ~* 'Brand' THEN 'Brand Search'
     WHEN campaign_name ~* 'Search' AND campaign_name ~* 'NB' THEN 'Non-Brand Search'
-    WHEN campaign_name ~* 'Shopping' AND campaign_name ~* 'Brand' THEN 'Brand Search'
-    WHEN campaign_name ~* 'Shopping' AND campaign_name ~* 'NB' THEN 'Non-Brand Search'
+    WHEN campaign_name ~* 'Shopping' AND campaign_name ~* 'Brand' THEN 'Brand Shopping'
+    WHEN campaign_name ~* 'Shopping' AND campaign_name ~* 'NB' THEN 'Non-Brand Shopping'
     ELSE 'Other'
 END AS tactic,
 date,
