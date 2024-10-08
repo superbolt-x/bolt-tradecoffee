@@ -7,7 +7,7 @@ WITH paid_data as
         COALESCE(SUM(purchases),0) as purchases, COALESCE(SUM(revenue),0) as revenue
     FROM
         (SELECT 'Meta' as channel, date, date_granularity, 
-            spend, link_clicks as clicks, impressions, purchases, revenue
+            spend, link_clicks as clicks, impressions, purchases_7_d_click as purchases, revenue_7_d_click as revenue
         FROM {{ source('reporting','facebook_ad_performance') }}
         UNION ALL
         SELECT 'Google Ads' as channel, date, date_granularity,
