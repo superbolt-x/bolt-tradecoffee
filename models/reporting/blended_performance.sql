@@ -11,7 +11,8 @@ WITH paid_data as
         FROM {{ source('reporting','facebook_ad_performance') }}
         UNION ALL
         SELECT 'Google Ads' as channel, date, date_granularity,
-            spend, clicks, impressions, purchases, revenue
+            spend, clicks, impressions, gift_purchases+subscription_purchases+alc_purchases as purchases, 
+            gift_purchases_revenue+subscription_purchases_revenue+alc_purchases_revenue as revenue
         FROM {{ source('reporting','googleads_campaign_performance') }}
         UNION ALL
         SELECT 'Bing' as channel, date, date_granularity,
