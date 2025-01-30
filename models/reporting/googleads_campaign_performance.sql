@@ -13,6 +13,13 @@ CASE WHEN campaign_name ~* 'Search' AND campaign_name ~* 'Brand' THEN 'Brand Sea
     WHEN campaign_name ~* 'Demand' THEN 'Demand Gen'
     ELSE 'Shopping'
 END AS tactic,
+CASE WHEN campaign_name ~* 'PMax' AND campaign_name ~* 'Brand' THEN 'Brand PMax'
+    WHEN campaign_name ~* 'PMax' AND campaign_name !~* 'Brand' THEN 'NB PMax'
+    WHEN campaign_name ~* 'Search' AND campaign_name ~* 'Brand' THEN 'Brand Search'
+    WHEN campaign_name ~* 'Search' AND campaign_name ~* 'NB' THEN 'Non-Brand Search'
+    WHEN campaign_name ~* 'Demand' THEN 'Demand Gen'
+    ELSE 'Others'
+END AS tactic_granular,
 date,
 date_granularity,
 spend,
