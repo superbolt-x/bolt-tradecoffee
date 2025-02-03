@@ -8,7 +8,7 @@ campaign_id,
 campaign_effective_status,
 campaign_type_default,
 CASE WHEN campaign_name ~* 'Retargeting' THEN 'Retargeting' 
-    WHEN campaign_name ~* 'Prospecting' OR campaign_name ~* 'Purchase' THEN 'Prospecting'
+    WHEN campaign_name ~* 'Prospecting' OR campaign_name ~* 'ASC' OR campaign_name ~* 'Purchase' THEN 'Prospecting'
     ELSE 'TOF'
 END as tactic,
 adset_name,
