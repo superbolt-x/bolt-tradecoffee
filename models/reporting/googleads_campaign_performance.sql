@@ -35,5 +35,7 @@ googleadsalcpurchaseconversion as alc_purchases,
 googleadsalcpurchaseconversion_value as alc_purchases_revenue,
 search_impression_share,
 search_budget_lost_impression_share,
-search_rank_lost_impression_share
+search_rank_lost_impression_share,
+quizformcompletions as quiz_completions,
+quizformstarts as quiz_starts
 FROM {{ ref('googleads_performance_by_campaign') }}
