@@ -38,3 +38,8 @@ revenue,
 revenue_1_d_view,
 revenue_7_d_click
 FROM {{ ref('facebook_performance_by_ad') }}
+LEFT JOIN 
+    (SELECT ad_id, date, COALESCE(SUM(_7_d_click),0) as add_to_cart_7_d_click, COALESCE(SUM(_1_d_view),0) as add_to_cart_1_d_view 
+    FROM {{ source('facebook_raw','ads_insights_actions') }}
+    WHERE action_type = 'add_to_cart'
+    GROUP BY 1,2) USING (ad_id,date)
