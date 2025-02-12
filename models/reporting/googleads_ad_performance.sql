@@ -31,3 +31,4 @@ googleadsalcpurchaseconversion as alc_purchases,
 googleadsalcpurchaseconversion_value as alc_purchases_revenue
 
 FROM {{ ref('googleads_performance_by_ad') }}
+WHERE date < current_date
