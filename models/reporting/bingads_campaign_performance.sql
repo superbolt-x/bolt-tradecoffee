@@ -23,3 +23,4 @@ conversions as purchases,
 revenue,
 view_through_conversions
 FROM {{ ref('bingads_performance_by_campaign') }}
+WHERE date < current_date
