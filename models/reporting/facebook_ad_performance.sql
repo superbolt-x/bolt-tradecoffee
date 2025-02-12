@@ -43,3 +43,4 @@ LEFT JOIN
     FROM {{ source('facebook_raw','ads_insights_actions') }}
     WHERE action_type = 'add_to_cart'
     GROUP BY 1,2) USING (ad_id,date)
+WHERE date < current_date
