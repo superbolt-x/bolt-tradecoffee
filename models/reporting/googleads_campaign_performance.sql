@@ -39,3 +39,4 @@ search_rank_lost_impression_share,
 quizformcompletions as quiz_completions,
 quizformstarts as quiz_starts
 FROM {{ ref('googleads_performance_by_campaign') }}
+WHERE date < current_date
