@@ -21,3 +21,4 @@ total_view_add_to_cart+total_click_add_to_cart as add_to_cart,
 total_checkout as purchases,
 total_checkout_value as revenue
 FROM {{ ref('pinterest_performance_by_ad_group') }}
+WHERE date < current_date
